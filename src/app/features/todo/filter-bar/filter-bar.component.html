@@ -1,0 +1,35 @@
+<div class="flex items-center justify-between">
+  <div class="text-sm text-zinc-600 dark:text-zinc-300">
+    <span class="font-medium">{{ activeCount ?? 0 }}</span> items left
+  </div>
+
+  <div class="inline-flex overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-700">
+    <button
+      class="px-3 py-1.5 text-xs"
+      [class.bg-indigo-600]="currentFilter === 'all'"
+      [class.text-white]="currentFilter === 'all'"
+      (click)="filterChange.emit('all')"
+    >All</button>
+    <button
+      class="px-3 py-1.5 text-xs"
+      [class.bg-indigo-600]="currentFilter === 'active'"
+      [class.text-white]="currentFilter === 'active'"
+      (click)="filterChange.emit('active')"
+    >Active</button>
+    <button
+      class="px-3 py-1.5 text-xs"
+      [class.bg-indigo-600]="currentFilter === 'completed'"
+      [class.text-white]="currentFilter === 'completed'"
+      (click)="filterChange.emit('completed')"
+    >Completed</button>
+  </div>
+
+  <button
+    class="text-xs text-zinc-600 hover:text-red-600 dark:text-zinc-300"
+    [class.opacity-50]="(completedCount ?? 0) === 0"
+    [disabled]="(completedCount ?? 0) === 0"
+    (click)="clearCompleted.emit()"
+  >
+    Clear completed ({{ completedCount ?? 0 }})
+  </button>
+</div>
