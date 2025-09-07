@@ -163,9 +163,9 @@ Note: Depending on how you generated the project, lint/test tooling may vary. Ad
 You can drop screenshots in docs/screenshots and reference them here:
 
 - Light mode
-  - ![Light mode](docs/screenshots/light-mode.png)
+  - ![Light mode](docs/screenshots/light-mode.png =600x400)
 - Dark mode
-  - ![Dark mode](docs/screenshots/dark-mode.png)
+  - ![Dark mode](docs/screenshots/dark-mode.png =600x400)
 
 ---
 
